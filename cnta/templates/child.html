@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .body{
+            background:linear-gradient(to right, #47D7AC,#91E7CD);
+            height: max-content;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+        .box{
+            width: 50rem;
+            height: 95rem;
+            position: relative;
+            margin: 6% auto;
+            background: aliceblue;
+            padding: 1rem;
+            border-radius: 3rem;
+        }
+        .input{
+            padding-left: 70px;
+            top: 100px;
+            position: absolute;
+            width: 300px;
+            transition: .5s;
+        }
+        .field{
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
+        }
+        .btn{
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: linear-gradient(to right, #47D7AC,#91E7CD);
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+        }
+        .btn:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+        }
+    </style>
+</head>
+<body>
+    <font face="Times New Roman">
+    <div class="body">
+        <div class="box">
+            <center>
+                <h1>Fill Child's Details</h1>
+            </center>
+            <form action="" method="post" class="input" enctype="multipart/form-data">
+                {% csrf_token %}
+                <br> <br>
+                <label for="image">Post Child's Picture:</label>
+                <br> <br>
+                <input type="file" id="image" name="image">
+                <br> <br>
+                <label for="FName">1.) First Name</label>
+                <input type="text" id="FName" name="FName" class="field" placeholder="First Name" required>
+                <br> <br>
+                <label for="LName">2.) Last Name</label>
+                <input type="text" id="LName" name="LName" class="field" placeholder="Last Name" required>
+                <br> <br>
+                <label for="Sex">3.) Sex: </label>
+                <input type="radio" id="Male" name="Sex" value="M">Male
+                <input type="radio" id="Female" name="Sex" value="F">Female
+                <br> <br>
+                <label for="father">4.) Father's Name</label>
+                <input type="text" id="Father" name="Father" class="field" placeholder="Father's Name" required>
+                <br> <br>
+                <label for="fnumber">5.) Father's Contact Number</label>
+                <input type="tel" id="fnumber" name="fnumber" class="field" placeholder="Father's Contact Number" required>
+                <br> <br>
+                <label for="mother">6.) Mother's Name</label>
+                <input type="text" id="mother" name="mother" class="field" placeholder="Mother's Name" required>
+                <br> <br>
+                <label for="mnumber">7.) Mother's Contact Number</label>
+                <input type="tel" id="mnumber" name="mnumber" class="field" placeholder="Mother's Contact Number" required>
+                <br> <br>
+                <label for="age">8.) Age</label>
+                <input type="any" id="age" name="age" class="field" placeholder="Age" required>
+                <br> <br>
+                <label for="weight">9.) Weight</label>
+                <input type="any" id="weight" name="weight" class="field" placeholder="Weight" required>
+                <br> <br>
+                <label for="height">10.) Height</label>
+                <input type="any" id="height" name="height" class="field" placeholder="Height" required>
+                <br> <br>
+                <label for="headcir">11.) Head Circumference</label>
+                <input type="any" id="headcir" name="headcir" class="field" placeholder="Head Circumference" required>
+                <br> <br>
+                <label for="muac">12.) Mid Upper Arm Circumference</label>
+                <input type="any" id="muac" name="muac" class="field" placeholder="Mid Upper Arm Circumference" required>
+                <br> <br>
+                <label for="chestCir">13.) Chest Circumference</label>
+                <input type="any" id="chestCir" name="chestCir" class="field" placeholder="Chest Circumference" required>
+                <br> <br>
+                <label for="date">14.) Today's Date</label>
+                <input type="date" id="date" name="date" class="field" placeholder="Date" required>
+                <br> <br>
+                <center> <button type="submit" class="btn">Submit</button> </center>
+            </form>
+        </div>
+    </div>
+</font>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter|OTP</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .body{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #47D7AC;
+        }
+        .box{
+            width: 20rem;
+            height: 20rem;
+            position: relative;
+            margin: 6% auto;
+            background: aliceblue;
+            padding: 1rem;
+            border-radius: 3rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .box h1,h3{
+            padding-top: 2rem;
+            font-style: oblique;
+            font-weight: lighter;
+            color: black;
+        }
+        .field{
+            width: 75%;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none;
+            background: transparent;
+        }
+        .input{
+            padding-left: 2rem;
+            top: 15rem;
+            position: fixed;
+            width: 250px;
+            transition: .5s;
+        }
+        .btn{
+            width: 5rem;
+            padding: 0.5rem 0rem;
+            cursor: pointer;
+            display: block;
+            position: fixed;
+            margin: 3rem;
+            margin-left: 5.5rem;
+            background: #11111F;
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+        }
+        .btn p{
+            color: aliceblue;
+        }
+        .btn:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .btn{
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <center>
+            <div class="box">
+                <center>
+                    <h1>Enter OTP:</h1>
+                    <h3>OTP sent to {{mobile}} </h3>
+                </center>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="input">
+                        {% if message %}
+                        <p style="color: red;">{{ message }}</p>
+                        {% endif %}
+                        <input type="number" id="otp" name="otp" class="field" required>
+                        <input class="btn" type="submit" value="Sumbit">
+                    </div>
+                </form>
+            </div>
+        </center>
+    </div>
+</body>
+</html>

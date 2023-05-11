@@ -1,0 +1,208 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .navbarBackground{
+            display: flex;
+            background-color: #47D7AC;
+        }
+        .nav-list{
+            padding-left: 1rem;
+            display: flex;
+            list-style: none;
+        }
+        .nav-list li p{
+            padding-left: 2rem;
+            color: aliceblue;
+            padding-top: 2rem;
+            size: 3rem;
+        }
+        .nav-list li p:hover{
+            color: gray;
+        }
+        .nav-list li{
+            padding: 0.5rem;
+        }
+        .nav-list li a:active{
+            color: #11111F;
+        }
+        .nav-list li a:link{
+            text-decoration: none;
+        }
+        .nav-list li img{
+            height: 5rem;
+            border-radius: 150rem;
+        }
+        .rightNav{
+            padding-left: 35rem;
+            padding-top: 2rem;
+        }
+        .rightNav button{
+            height: 2rem;
+            width: 5rem;
+            border-radius: 2rem;
+            background-color: #11111F;
+            cursor: pointer;
+        }
+        .rightNav button:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .rightNav button p{
+            color: aliceblue;
+        }
+        .rightNav button p:hover{
+            color: #47D7AC;
+        }
+        .rightNav button:hover{
+            color: aliceblue;
+        }
+        .identity{
+            padding-left: 1rem;
+            display: flex;
+            list-style: none;
+        }
+        .textBig{
+            color: aliceblue;
+            font-size:larger;
+            font-family:'Times New Roman';
+        }
+        .textBig2{
+            color: aliceblue;
+            font-size:medium;
+            font-family:'Times New Roman';
+        }
+        .backgroundFirstSection{
+            background-color: #11111F;
+        }
+        * {box-sizing:border-box}
+        .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+        }
+        .mySlides {
+        display: none;
+        }
+        .text {
+        color:#11111F;
+        font-size: 25px;
+        padding: 8px 12px;
+        position: absolute;
+        margin-bottom: 700px;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        overflow:visible;
+        }
+        .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+    <font face='Times New Roman'>
+    <nav class="navbarBackground">
+        <ul class="nav-list">
+            <li><img src="{% static 'img\logo.png' %}" alt="logo"></li>
+            <li><a href="#acc"><p>Accomplishments</p></a></li>
+            <li><a href="#services"><p>Services</p></a></li>
+            <li><a href="#aboutus"><p>About Us</p></a></li>
+            {% if user.is_authenticated %}
+            <li><a href="logoutbutton"><p>Log Out</p></a></li>
+            {% endif %}
+        </ul>
+        {% if not user.is_authenticated %}
+        <div class="rightNav">
+            <div class="button">
+                    <button type="button" id="myButton"><p> <a href="login">Log In</a></p></button>
+            </div>
+        </div>
+        {% endif %}
+    </nav>
+    <section class="backgroundFirstSection">
+                        <center>
+                            <p> <h1 class="textBig">CNTA-IND AI </h1>
+                                <h2 class="textBig2">
+                                    "Every Child is Special"
+                                </h2>
+                            </p>
+                        </center>
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <div class="text fade"><h1>Welcome to CNTA</h1></div>
+                            <img src="static\img\1.jpg" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="text fade"><h1>A Framework Built to Predict and Help Malnutrition</h1></div>
+                            <img src="static\img\2.jpg" style="width:100%">
+                            <div class="text"></div>
+                        </div>
+                            <div class="mySlides fade">
+                            <div class="text fade"><h1>India contributes a third of the global burden of Undernutrition</h1></div>    
+                            <img src="static\img\3.jpg" style="width:100%">
+                            <div class="text"></div>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="text fade"><h1>As much as 48% of children under the age of Five <br> in the country are Malnurished</h1></div>
+                            <img src="static\img\4.jpg" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="text fade"><h1>India,Nigeria and Pakistan are Home to almost <br> half(47%) of Stunted Children</h1></div>
+                            <img src="static\img\5.jpg" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="text fade"><h1>The Inception of CNTA was with the divine motive <br> to help Children have a Healthy Childhood</h1></div>
+                            <img src="static\img\6.jpg" style="width:100%">
+                        </div> 
+                        <div class="mySlides fade">
+                            <div class="text fade"><h1>Log In and Join Us in this Journey</h1></div>
+                            <img src="static\img\7.jpg" style="width:100%">
+                        </div>           
+                    </div>
+                    <br>
+                    <div style="text-align:center">
+                        <span onclick="currentSlide(1)"></span>
+                        <span onclick="currentSlide(2)"></span>
+                        <span onclick="currentSlide(3)"></span>
+                        <span onclick="currentSlide(4)"></span>
+                        <span onclick="currentSlide(5)"></span>
+                        <span onclick="currentSlide(6)"></span>
+                        <span onclick="currentSlide(7)"></span>
+                    </div>
+    </section>
+</font>
+</body>
+<script type="text/javascript">
+    {% comment %} document.getElementById("myButton").onclick = function () {
+        location.href = "login";
+    }; {% endcomment %}
+        let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < 7; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 7000);
+    }
+</script>
+</html>

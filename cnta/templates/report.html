@@ -1,0 +1,148 @@
+ id="myChart"<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .body{
+            background:linear-gradient(to right, #47D7AC,#91E7CD);
+            height: max-content;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+        }
+        .box{
+            width: 60rem;
+            height: 150rem;
+            position: relative;
+            margin: 6% auto;
+            background: #11111F;
+            padding: 1rem;
+            border-radius: 3rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .box h1{
+            padding-top: 2rem;
+            font-style: oblique;
+            font-weight: lighter;
+            color: aliceblue;
+        }
+        #photu{
+            position: relative;
+            height: 10rem;
+            top: 2rem;
+            border-radius: 3rem;
+            box-shadow: 0 4px 8px 0 rgba(233, 230, 230, 0.2), 0 6px 20px 0 rgba(236, 232, 232, 0.19);
+        }
+        .info{
+            position: relative;
+            padding-top: 3rem;
+            padding-right: 3rem;
+            padding-bottom: 2rem;
+            font-style: oblique;
+            font-weight: lighter;
+            color: aliceblue;
+            font-size: larger;
+        }
+        .chart h2{
+            padding-left: 2rem;
+            font-style: oblique;
+            font-weight: lighter;
+            color: aliceblue;
+            margin-bottom: 1rem;
+        }
+        .graph{
+            border-radius: 0.5rem;
+            background-color: aliceblue;
+        }
+        .btn{
+            width: 5rem;
+            padding: 0.5rem 0rem;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            left: 6rem;
+            margin: 7rem;
+            background: #47D7AC;
+            border: 0;
+            outline: none;
+            border-radius: 3rem;
+        }
+        .btn p{
+            color: #11111F;
+        }
+        .btn:hover{
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);;
+        }
+        .up{
+            width: 5rem;
+            padding: 0.5rem 0rem;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            left: 60rem;
+            bottom: 9rem;
+            margin: 7rem;
+            background: #47D7AC;
+            border: 0;
+            outline: none;
+            border-radius: 3rem;
+        }
+        .up p{
+            color: #11111F;
+        }
+        .up:hover{
+            box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="box">
+            <center>
+                <h1>Full Report:</h1>
+            </center>
+            <center>
+                <img id="photu" src="img/logo.png" alt="img">
+            </center>
+            <center>
+                <p class="info">
+                        Name: <var id="name">Name</var> <br>
+                        Sex: <var id="sex">Sex</var> <br>
+                        Age: <var id="age">Age</var> <br>
+                </p>
+            </center>
+            <div class="chart">
+                <h2>1.) Height for Age</h2>
+                <canvas class="graph" id="">
+
+                </canvas>
+                <h2>2.) Weight for Age</h2>
+                <canvas class="graph" id="">
+                </canvas>
+                <h2>3.) MUAC for Age</h2>
+                <canvas class="graph" id="">
+
+                </canvas>
+                <h2>4.) BMI for Age</h2>
+                <canvas class="graph" id="">
+
+                </canvas>
+                <h2>5.) Weight for Height for Age</h2>
+                <canvas class="graph" id="">
+
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <button type="submit" id="delete" class="btn"><p>Delete</p></button>
+    <button type="submit" id="update" class="up"><p>Update</p></button>
+</body>
+</html>

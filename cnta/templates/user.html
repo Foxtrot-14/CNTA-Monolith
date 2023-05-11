@@ -1,0 +1,201 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User - {{name}} </title> 
+    {% load static %} 
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .navbarBackground{
+            display: flex;
+            background-color: #47D7AC;
+        }
+        .nav-list{
+            padding-left: 1rem;
+            display: flex;
+            list-style: none;
+        }
+        .nav-list li p{
+            padding-left: 2rem;
+            color: aliceblue;
+            padding-top: 2rem;
+            size: 3rem;
+        }
+        .nav-list li p:hover{
+            color: gray;
+        }
+        .nav-list li{
+            padding: 0.5rem;
+        }
+        .nav-list li a:active{
+            color: #11111F;
+        }
+        .nav-list li a:link{
+            text-decoration: none;
+        }
+        .nav-list li img{
+            height: 5rem;
+            border-radius: 150rem;
+        }
+        .rightNav{
+            padding-left: 20rem;
+            padding-top: 2rem;
+        }
+        .rightNav button{
+            height: 2rem;
+            width: 6rem;
+            border-radius: 2rem;
+            background-color: #11111F;
+            cursor: pointer;
+        }
+        .rightNav button:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .rightNav button p{
+            color: aliceblue;
+        }
+        .rightNav button p:hover{
+            color: #47D7AC;
+        }
+        .rightNav button:hover{
+            color: aliceblue;
+        }
+        .backgroundFirstSection{
+            background-color: #11111F;
+            height:max-content;
+        }
+        .textBig{
+            padding-top: 1rem;
+            padding-left: 3rem;
+            color: aliceblue;
+            font: size 5rem;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .righlist{
+            display: flex;
+            list-style: none;
+        }
+        .loginfo{
+            padding-top: 0.5rem;
+            padding-right: 4rem;
+        }
+        .out{
+            padding-left: 0.5rem;
+        }
+        .card:hover{
+            background-color: #47D7AC;
+            box-shadow: 0 4px 8px 0 rgba(243, 243, 243, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }  
+        .card {
+        border-radius: 3rem;
+        padding-top: 2rem;
+        height: 23rem;
+        background-color: aliceblue;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        text-align: center;
+        font-family: arial;
+        margin-bottom:1rem;
+        }
+        .card img{
+            height: 10rem;
+            border-radius: 35rem;
+            margin-bottom: 1rem;
+        }
+        .price {
+        color: grey;
+        font-size: 22px;
+        }
+        .card button {
+        margin-top: 2rem;    
+        border-radius: 3rem;
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #11111F;
+        text-align: center;
+        cursor: pointer;
+        width: 70%;
+        font-size: 18px;
+        }
+        .card button:hover{
+            box-shadow: 0 4px 8px 0 rgba(243, 243, 243, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .list{
+            display: flex;
+            list-style: none;
+        }
+        .list li{
+            width: 30rem;
+            display: inline;
+            float: left;
+        }
+        .main-list{
+            display:flex;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <font face="Times New Roman">
+    <nav class="navbarBackground">
+        <ul class="nav-list">
+            <li><img src="img\logo.png" alt="logo"></li>
+            <li><a href="child"><p>Add Profile</p></a></li>
+            <li><a href="user"><p>Added Profiles</p></a></li>
+            <li><a href="#store"><p>Store</p></a></li>
+            <li><a href="#problems"><p>Report a Problem</p></a></li>
+        </ul>
+        <div class="rightNav">
+            <div class="button">
+                <ul class="righlist">
+                    <li>
+                        <p class="loginfo">
+                            Hello, {{name}}
+                        </p>
+                    </li>
+                    <li>
+                        <button type="button"> <p> Download App</p></button>
+                    </li>
+                    <li class="out">
+                        <button onclick="location.href='logoutbutton';"  type="button"> <p> Log Out</p></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+            <div class="backgroundFirstSection">
+                <center>        
+                        <p>
+                            <h1 class="textBig">
+                                Added Profiles:
+                            </h1>
+                        </p>
+                    <ul class="main-list">
+                        <li>
+                            <ul class="list">
+                                        {% for child in childs %}
+                                        <li>
+                                            <div class="card">
+                                                <img src="/media/{{child.image}}" alt="photo">
+                                                <h1>Name: {{child.fName}} </h1>
+                                                <p class="price">Age: {{child.age}} </p>
+                                                <p>Sex: {{child.sex}} </p>
+                                                <p><button onclick="location.href='{{child.get_absolute_url}}';" >See Full Report</button></p>
+                                            </div>
+                                        </li>
+                                        {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                </center>
+            </div>
+</font>
+</body>
+</html>
